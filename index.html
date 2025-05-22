@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Izhan Sajid - Software Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#1e40af",
+              accent: "#10b981",
+              dark: "#1f2937",
+              light: "#f3f4f6",
+            },
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            animation: {
+              fadeInUp: "fadeInUp 1s ease forwards",
+              float: "float 3s ease-in-out infinite",
+              "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": {
+                  opacity: "0",
+                  transform: "translateY(20px)",
+                },
+                "100%": {
+                  opacity: "1",
+                  transform: "translateY(0)",
+                },
+              },
+              float: {
+                "0%, 100%": {
+                  transform: "translateY(0)",
+                },
+                "50%": {
+                  transform: "translateY(-20px)",
+                },
+              },
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins bg-white text-dark">
+    <!-- Add this right after the opening body tag -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-primary/20 z-50">
+      <div
+        id="progressBar"
+        class="h-full bg-primary transition-all duration-300"
+        style="width: 0%"
+      ></div>
+    </div>
+
+    <!-- Navigation -->
+    <header
+      class="fixed w-full top-0 bg-white/95 backdrop-blur-md z-50 shadow-md transition-all duration-300"
+    >
+      <nav
+        class="flex justify-between items-center py-4 px-5 max-w-7xl mx-auto"
+      >
+        <div
+          class="text-2xl font-bold text-primary hover:scale-110 transition-transform"
+        >
+          Izhan Sajid
+        </div>
+        <ul class="hidden md:flex space-x-8">
+          <li>
+            <a
+              href="#home"
+              class="font-medium hover:text-primary transition-colors hover:scale-110"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="font-medium hover:text-primary transition-colors hover:scale-110"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="font-medium hover:text-primary transition-colors hover:scale-110"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#certificates"
+              class="font-medium hover:text-primary transition-colors hover:scale-110"
+              >Certifications</a
+            >
+          </li>
+          <li>
+            <a
+              href="#resumes"
+              class="font-medium hover:text-primary transition-colors hover:scale-110"
+              >Resumes</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="font-medium hover:text-primary transition-colors hover:scale-110"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <div class="md:hidden cursor-pointer hamburger" onclick="toggleMenu()">
+          <div class="w-6 h-0.5 bg-dark mb-1 transition-all duration-300"></div>
+          <div class="w-6 h-0.5 bg-dark mb-1 transition-all duration-300"></div>
+          <div class="w-6 h-0.5 bg-dark transition-all duration-300"></div>
+        </div>
+      </nav>
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="md:hidden fixed inset-0 bg-white z-40 transform translate-x-full transition-transform duration-300 ease-in-out"
+      >
+        <div
+          class="flex justify-between items-center p-5 border-b border-gray-200 bg-white"
+        >
+          <div class="text-2xl font-bold text-primary">Izhan Sajid</div>
+          <button
+            onclick="closeMenu()"
+            class="text-dark hover:text-primary transition-colors"
+          >
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <ul class="py-4 px-5 space-y-6 bg-white">
+          <li>
+            <a
+              href="#home"
+              class="flex items-center gap-3 text-lg font-medium hover:text-primary transition-colors"
+              onclick="closeMenu()"
+            >
+              <i class="fas fa-home w-6"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="flex items-center gap-3 text-lg font-medium hover:text-primary transition-colors"
+              onclick="closeMenu()"
+            >
+              <i class="fas fa-user w-6"></i>
+              <span>About</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="flex items-center gap-3 text-lg font-medium hover:text-primary transition-colors"
+              onclick="closeMenu()"
+            >
+              <i class="fas fa-code w-6"></i>
+              <span>Projects</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#certificates"
+              class="flex items-center gap-3 text-lg font-medium hover:text-primary transition-colors"
+              onclick="closeMenu()"
+            >
+              <i class="fas fa-certificate w-6"></i>
+              <span>Certifications</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#resumes"
+              class="flex items-center gap-3 text-lg font-medium hover:text-primary transition-colors"
+              onclick="closeMenu()"
+            >
+              <i class="fas fa-file-alt w-6"></i>
+              <span>Resumes</span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="flex items-center gap-3 text-lg font-medium hover:text-primary transition-colors"
+              onclick="closeMenu()"
+            >
+              <i class="fas fa-envelope w-6"></i>
+              <span>Contact</span>
+            </a>
+          </li>
+        </ul>
+        <div
+          class="absolute bottom-0 left-0 right-0 p-5 border-t border-gray-200 bg-white"
+        >
+          <div class="flex justify-center gap-6">
+            <a
+              href="https://github.com/izhansajiddeveloper"
+              class="text-2xl text-dark hover:text-primary transition-all duration-300 hover:scale-125"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="#"
+              class="text-2xl text-dark hover:text-primary transition-all duration-300 hover:scale-125"
+            >
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a
+              href="https://x.com/SajidIzhan22512?s=08"
+              class="text-2xl text-dark hover:text-primary transition-all duration-300 hover:scale-125"
+            >
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center px-5 bg-gradient-to-br from-light to-white pt-20 relative overflow-hidden"
+    >
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-20 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-slow"
+        ></div>
+        <div
+          class="absolute bottom-20 right-20 w-64 h-64 bg-secondary/10 rounded-full blur-3xl animate-pulse-slow animation-delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float"
+        ></div>
+      </div>
+      <div class="max-w-3xl mx-auto text-center relative z-10">
+        <!-- Profile Image Container -->
+        <div class="mb-8" data-aos="zoom-in" data-aos-duration="1000">
+          <div
+            class="w-40 h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden border-4 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative"
+          >
+            <img
+              src="/image/me.PNG"
+              alt="Izhan Sajid"
+              class="absolute inset-0 w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500"
+            />
+          </div>
+        </div>
+        <div class="mb-8" data-aos="fade-up" data-aos-delay="200">
+          <span
+            class="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium inline-block"
+            >Software Engineer & AI Enthusiast</span
+          >
+        </div>
+        <h1
+          class="text-5xl md:text-6xl font-bold mb-4"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          Hi, I'm
+          <span class="text-primary relative inline-block">
+            Izhan Sajid
+            <span
+              class="absolute -bottom-1 left-0 w-full h-1 bg-primary/30 transform scale-x-0 group-hover:scale-x-100 transition-transform"
+            ></span>
+          </span>
+        </h1>
+        <h2
+          class="text-2xl md:text-3xl text-gray-600 mb-6"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          Building Intelligent Solutions
+        </h2>
+        <p class="text-xl mb-8" data-aos="fade-up" data-aos-delay="800">
+          Specializing in Machine Learning, Deep Learning, and Generative Ai
+        </p>
+        <div
+          class="flex flex-col md:flex-row justify-center gap-4 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="1000"
+        >
+          <a
+            href="#projects"
+            class="inline-block px-8 py-3 bg-primary text-white rounded-full hover:bg-secondary transition-all hover:scale-105 hover:shadow-lg group"
+          >
+            <span class="flex items-center justify-center gap-2">
+              <i class="fas fa-code"></i>
+              View My Work
+            </span>
+          </a>
+          <a
+            href="#resumes"
+            class="inline-block px-8 py-3 border-2 border-primary text-primary rounded-full hover:bg-primary hover:text-white transition-all hover:scale-105 hover:shadow-lg group"
+          >
+            <span class="flex items-center justify-center gap-2">
+              <i class="fas fa-file-alt"></i>
+              Download Resume
+            </span>
+          </a>
+          <a
+            href="#contact"
+            class="inline-block px-8 py-3 bg-accent text-white rounded-full hover:bg-accent/90 transition-all hover:scale-105 hover:shadow-lg group"
+          >
+            <span class="flex items-center justify-center gap-2">
+              <i class="fas fa-envelope"></i>
+              Contact Me
+            </span>
+          </a>
+        </div>
+        <div
+          class="flex justify-center gap-6 mb-12"
+          data-aos="fade-up"
+          data-aos-delay="1200"
+        >
+          <a
+            href="https://github.com/izhansajiddeveloper"
+            class="text-2xl text-dark hover:text-primary transition-all duration-300 hover:scale-125"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="#"
+            class="text-2xl text-dark hover:text-primary transition-all duration-300 hover:scale-125"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a
+            href=" https://x.com/SajidIzhan22512?s=08 "
+            class="text-2xl text-dark hover:text-primary transition-all duration-300 hover:scale-125"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        <div
+          class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+          data-aos="fade-up"
+          data-aos-delay="1400"
+        >
+          <a
+            href="#about"
+            class="text-primary hover:text-secondary transition-colors"
+          >
+            <i class="fas fa-chevron-down text-3xl"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="py-12 md:py-20 bg-light relative overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-1/4 right-20 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-20 w-64 md:w-96 h-64 md:h-96 bg-secondary/5 rounded-full blur-3xl animate-float animation-delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full blur-3xl animate-float animation-delay-2000"
+        ></div>
+      </div>
+
+      <!-- Section Header -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+          <span class="text-primary font-medium mb-2 block"
+            >Get to Know Me</span
+          >
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <!-- Main Content -->
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start"
+        >
+          <!-- Left Column -->
+          <div class="space-y-6 md:space-y-8">
+            <!-- Who Am I Card -->
+            <div
+              class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <div class="flex items-center gap-4 mb-4 md:mb-6">
+                <div
+                  class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-lg md:text-xl group-hover:rotate-12 transition-transform duration-300"
+                >
+                  <i class="fas fa-user"></i>
+                </div>
+                <h3 class="text-xl md:text-2xl font-semibold text-primary">
+                  Who Am I?
+                </h3>
+              </div>
+              <p class="text-base md:text-lg leading-relaxed">
+                I am a passionate Software Engineer with expertise in Machine
+                Learning, Deep Learning, and Web Development. Currently pursuing
+                Computer Science, I combine theoretical knowledge with practical
+                experience to build innovative solutions.
+              </p>
+            </div>
+
+            <!-- Education & Experience Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+              <!-- Education Card -->
+              <div
+                class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                <div
+                  class="text-primary text-2xl md:text-3xl mb-3 md:mb-4 group-hover:rotate-12 transition-transform duration-300"
+                >
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h4 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+                  Education
+                </h4>
+                <div class="space-y-3 md:space-y-4">
+                  <div
+                    class="relative pl-6 md:pl-8 border-l-2 border-primary group"
+                  >
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full animate-ping"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"
+                    ></div>
+                    <h5 class="text-base md:text-lg font-medium">
+                      BS Software Engineering
+                    </h5>
+                    <p class="text-xs md:text-sm text-gray-600">
+                      2021 - Present
+                    </p>
+                    <p class="text-xs md:text-sm text-gray-500 mt-1">
+                      Pursuing degree in Software Engineering
+                    </p>
+                  </div>
+                  <div
+                    class="relative pl-6 md:pl-8 border-l-2 border-primary group"
+                  >
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full animate-ping"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"
+                    ></div>
+                    <h5 class="text-base md:text-lg font-medium">
+                      FSC Pre-Engineering
+                    </h5>
+                    <p class="text-xs md:text-sm text-gray-600">2019 - 2021</p>
+                    <p class="text-xs md:text-sm text-gray-500 mt-1">
+                      Completed with distinction
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Experience Card -->
+              <div
+                class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+                data-aos="fade-up"
+                data-aos-delay="400"
+              >
+                <div
+                  class="text-primary text-2xl md:text-3xl mb-3 md:mb-4 group-hover:rotate-12 transition-transform duration-300"
+                >
+                  <i class="fas fa-briefcase"></i>
+                </div>
+                <h4 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+                  Experience
+                </h4>
+                <div class="space-y-4 md:space-y-6">
+                  <div
+                    class="relative pl-6 md:pl-8 border-l-2 border-primary group"
+                  >
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full animate-ping"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"
+                    ></div>
+                    <h5
+                      class="text-base md:text-lg font-medium flex items-center gap-2"
+                    >
+                      <span
+                        class="bg-primary/10 text-primary px-2 md:px-3 py-1 rounded-full text-xs md:text-sm"
+                        >Current</span
+                      >
+                      Machine Learning Engineer Intern
+                    </h5>
+                    <p class="text-xs md:text-sm text-gray-600">
+                      Ezitech Institute, Rawalpindi
+                    </p>
+                    <p class="text-xs md:text-sm text-gray-500 mt-1">
+                      Working on AI and ML projects
+                    </p>
+                  </div>
+                  <div
+                    class="relative pl-6 md:pl-8 border-l-2 border-primary group"
+                  >
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full animate-ping"
+                    ></div>
+                    <div
+                      class="absolute left-[-7px] md:left-[-9px] top-0 w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full group-hover:scale-150 transition-transform duration-300"
+                    ></div>
+                    <h5
+                      class="text-base md:text-lg font-medium flex items-center gap-2"
+                    >
+                      <span
+                        class="bg-accent/10 text-accent px-2 md:px-3 py-1 rounded-full text-xs md:text-sm"
+                        >Training</span
+                      >
+                      Generative AI Training
+                    </h5>
+                    <p class="text-xs md:text-sm text-gray-600">Pak-Angels</p>
+                    <p class="text-xs md:text-sm text-gray-500 mt-1">
+                      Advanced training in Generative AI technologies
+                    </p>
+                    <div class="mt-2 flex flex-wrap gap-1 md:gap-2">
+                      <span
+                        class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary hover:text-white transition-colors"
+                        >LLMs</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary hover:text-white transition-colors"
+                        >Diffusion Models</span
+                      >
+                      <span
+                        class="px-2 py-1 bg-primary/10 text-primary text-xs rounded-full hover:bg-primary hover:text-white transition-colors"
+                        >RAG</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
+            <!-- Languages Card -->
+            <div
+              class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-left"
+              data-aos-delay="500"
+            >
+              <div
+                class="text-primary text-2xl md:text-3xl mb-3 md:mb-4 group-hover:rotate-12 transition-transform duration-300"
+              >
+                <i class="fas fa-language"></i>
+              </div>
+              <h4 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+                Languages
+              </h4>
+              <ul class="space-y-2 md:space-y-3">
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">English</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Urdu</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Tools Card -->
+            <div
+              class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-left"
+              data-aos-delay="600"
+            >
+              <div
+                class="text-primary text-2xl md:text-3xl mb-3 md:mb-4 group-hover:rotate-12 transition-transform duration-300"
+              >
+                <i class="fas fa-tools"></i>
+              </div>
+              <h4 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+                Tools & Technologies
+              </h4>
+              <ul class="space-y-2 md:space-y-3">
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Hugging Face</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Gradio</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Colab</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Streamlit</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Development Card -->
+            <div
+              class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-left"
+              data-aos-delay="700"
+            >
+              <div
+                class="text-primary text-2xl md:text-3xl mb-3 md:mb-4 group-hover:rotate-12 transition-transform duration-300"
+              >
+                <i class="fas fa-code"></i>
+              </div>
+              <h4 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+                Development
+              </h4>
+              <ul class="space-y-2 md:space-y-3">
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Web Development</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Machine Learning</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Deep Learning</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- AI & ML Card -->
+            <div
+              class="bg-white p-4 md:p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-left"
+              data-aos-delay="800"
+            >
+              <div
+                class="text-primary text-2xl md:text-3xl mb-3 md:mb-4 group-hover:rotate-12 transition-transform duration-300"
+              >
+                <i class="fas fa-brain"></i>
+              </div>
+              <h4 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+                AI & ML
+              </h4>
+              <ul class="space-y-2 md:space-y-3">
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Generative AI</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">Computer Vision</span>
+                </li>
+                <li class="flex items-center group/item">
+                  <span
+                    class="w-1.5 h-1.5 md:w-2 md:h-2 bg-primary rounded-full mr-2 group-hover/item:scale-150 transition-transform"
+                  ></span>
+                  <span class="text-sm md:text-base">NLP</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section
+      id="skills"
+      class="py-12 md:py-20 bg-light relative overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-1/4 right-20 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-20 w-64 md:w-96 h-64 md:h-96 bg-secondary/5 rounded-full blur-3xl animate-float animation-delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full blur-3xl animate-float animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+          <span class="text-primary font-medium mb-2 block">My Expertise</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 text-black">
+            Skills & Technologies
+          </h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+        >
+          <!-- Programming Skills Card -->
+          <div
+            class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="flex items-center gap-4 mb-6 relative">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+              >
+                <i class="fas fa-code"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-semibold text-black">
+                Programming
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2 relative">
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fab fa-python mr-1"></i> Python
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fab fa-js mr-1"></i> JavaScript
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fab fa-html5 mr-1"></i> HTML5
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fab fa-css3-alt mr-1"></i> CSS3
+              </span>
+            </div>
+            <div
+              class="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+            ></div>
+          </div>
+
+          <!-- Machine Learning & AI Card -->
+          <div
+            class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="flex items-center gap-4 mb-6 relative">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+              >
+                <i class="fas fa-brain"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-semibold text-black">
+                Machine Learning & AI
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2 relative">
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-robot mr-1"></i> Machine Learning
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-network-wired mr-1"></i> Deep Learning
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-magic mr-1"></i> Generative AI
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-eye mr-1"></i> Computer Vision
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-language mr-1"></i> NLP
+              </span>
+            </div>
+            <div
+              class="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+            ></div>
+          </div>
+
+          <!-- Tools & Frameworks Card -->
+          <div
+            class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group relative overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            ></div>
+            <div class="flex items-center gap-4 mb-6 relative">
+              <div
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+              >
+                <i class="fas fa-tools"></i>
+              </div>
+              <h3 class="text-xl md:text-2xl font-semibold text-black">
+                Tools & Frameworks
+              </h3>
+            </div>
+            <div class="flex flex-wrap gap-2 relative">
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-database mr-1"></i> TensorFlow
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-project-diagram mr-1"></i> PyTorch
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-server mr-1"></i> Hugging Face
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-window-maximize mr-1"></i> Streamlit
+              </span>
+              <span
+                class="px-3 py-1.5 bg-primary/10 text-black rounded-full text-sm md:text-base hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 group/item"
+              >
+                <i class="fas fa-code-branch mr-1"></i> Git
+              </span>
+            </div>
+            <div
+              class="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="py-12 md:py-20 bg-light relative overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-1/4 right-20 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-20 w-64 md:w-96 h-64 md:h-96 bg-secondary/5 rounded-full blur-3xl animate-float animation-delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full blur-3xl animate-float animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+          <span class="text-primary font-medium mb-2 block">My Work</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Cotton Disease Detection -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="/image/ma2.jfif"
+                alt="Cotton Disease Detection"
+                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">
+                Cotton Disease Detection
+              </h3>
+              <p class="text-gray-600 mb-4">
+                AI-powered system for detecting diseases in cotton plants using
+                computer vision and deep learning.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Machine Learning</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Deep Learning</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >TensorFlow</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="https://github.com/izhansajiddeveloper/cotton-Disease-Detection"
+                  class="text-primary hover:text-secondary transition-colors"
+                >
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href="https://github.com/izhansajiddeveloper/cotton-Disease-Detection"
+                  class="text-sm text-primary hover:text-secondary transition-colors flex items-center gap-1"
+                >
+                  View Project <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cat-Dog Classification -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Cat-Dog Classification"
+                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Cat-Dog Classification</h3>
+              <p class="text-gray-600 mb-4">
+                Deep learning model for classifying images of cats and dogs with
+                high accuracy.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >CNN</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Image Classification</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >PyTorch</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="https://github.com/izhansajiddeveloper/Cat-dog-classification-"
+                  class="text-primary hover:text-secondary transition-colors"
+                >
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href="https://github.com/izhansajiddeveloper/Cat-dog-classification-"
+                  class="text-sm text-primary hover:text-secondary transition-colors flex items-center gap-1"
+                >
+                  View Project <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Brain Tumor Detection -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Brain Tumor Detection"
+                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Brain Tumor Detection</h3>
+              <p class="text-gray-600 mb-4">
+                Medical imaging analysis system for detecting brain tumors using
+                deep learning.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Medical Imaging</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Deep Learning</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >TensorFlow</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="https://github.com/izhansajiddeveloper/Brain-Tumor"
+                  class="text-primary hover:text-secondary transition-colors"
+                >
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href="https://github.com/izhansajiddeveloper/Brain-Tumor"
+                  class="text-sm text-primary hover:text-secondary transition-colors flex items-center gap-1"
+                >
+                  View Project <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Minigame Hub -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Minigame Hub"
+                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Mini-Games Hub</h3>
+              <p class="text-gray-600 mb-4">
+                Collection of interactive mini-games built with modern web
+                technologies.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >HTML/CSS</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >JavaScript</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="https://github.com/izhansajiddeveloper/Mini-Games-Hub"
+                  class="text-primary hover:text-secondary transition-colors"
+                >
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href="https://github.com/izhansajiddeveloper/Mini-Games-Hub"
+                  class="text-sm text-primary hover:text-secondary transition-colors flex items-center gap-1"
+                >
+                  View Project <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wellness Nexus -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                alt="Wellness Nexus"
+                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Wellness Nexus</h3>
+              <p class="text-gray-600 mb-4">
+                Health and wellness platform with user authentication and social
+                features.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Flask-Firebase</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >HTML,CSS,JS</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="https://github.com/izhansajiddeveloper/Wellness-Nexus"
+                  class="text-primary hover:text-secondary transition-colors"
+                >
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href="https://github.com/izhansajiddeveloper/Wellness-Nexus"
+                  class="text-sm text-primary hover:text-secondary transition-colors flex items-center gap-1"
+                >
+                  View Project <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Simple Chatbot -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="data:image/jpeg;base64,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"
+                alt="Simple Chatbot"
+                class="w-full h-48 object-cover transform group-hover:scale-110 transition-transform duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">cough detect</h3>
+              <p class="text-gray-600 mb-4">
+                Useful for detecting Cough Diseases
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >Colab</span
+                >
+              </div>
+              <div class="flex justify-between items-center">
+                <a
+                  href="https://github.com/izhansajiddeveloper/coughdetect"
+                  class="text-primary hover:text-secondary transition-colors"
+                >
+                  <i class="fab fa-github text-xl"></i>
+                </a>
+                <a
+                  href="https://github.com/izhansajiddeveloper/coughdetect"
+                  class="text-sm text-primary hover:text-secondary transition-colors flex items-center gap-1"
+                >
+                  View Project <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="fixed inset-0 bg-black/90 z-50 hidden">
+      <div class="absolute top-4 right-4">
+        <button
+          onclick="closeCertificateModal()"
+          class="text-white hover:text-primary transition-colors"
+        >
+          <i class="fas fa-times text-3xl"></i>
+        </button>
+      </div>
+      <div class="h-full w-full flex items-center justify-center p-4">
+        <img
+          id="modalCertificateImage"
+          src=""
+          alt="Certificate"
+          class="max-h-full max-w-full object-contain"
+        />
+      </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <section
+      id="certificates"
+      class="py-12 md:py-20 bg-light relative overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-1/4 right-20 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-20 w-64 md:w-96 h-64 md:h-96 bg-secondary/5 rounded-full blur-3xl animate-float animation-delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full blur-3xl animate-float animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+          <span class="text-primary font-medium mb-2 block"
+            >My Achievements</span
+          >
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- EZItech Institute Certificate -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative">
+                <a href="/image/inter cert.PNG" target="_blank" class="block">
+                  <img
+                    src="/image/inter cert.PNG"
+                    alt="EZItech ML Certificate"
+                    class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </div>
+              <div class="p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-6">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+                  >
+                    <i class="fas fa-certificate"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-primary">
+                      Machine Learning Internship
+                    </h3>
+                    <p class="text-gray-600">EZItech Institute, Rawalpindi</p>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Completed intensive training in Machine Learning
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Hands-on experience with real-world ML projects
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Developed and deployed ML models
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center justify-between">
+                  <span class="text-sm text-gray-500">Issued: 2023</span>
+                  <a
+                    href="/image/inter cert.PNG"
+                    target="_blank"
+                    class="text-primary hover:text-secondary transition-colors flex items-center gap-2 group"
+                  >
+                    View Certificate
+                    <i
+                      class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pak-Angels Certificate -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative">
+                <a
+                  href="/image/ai certificate.PNG"
+                  target="_blank"
+                  class="block"
+                >
+                  <img
+                    src="/image/ai certificate.PNG"
+                    alt="Pak-Angels AI Certificate"
+                    class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </div>
+              <div class="p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-6">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+                  >
+                    <i class="fas fa-brain"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-primary">
+                      Generative AI Training
+                    </h3>
+                    <p class="text-gray-600">Pak-Angels</p>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Advanced training in Generative AI technologies
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Expertise in LLMs and Diffusion Models
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Practical experience with RAG systems
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center justify-between">
+                  <span class="text-sm text-gray-500">Issued: 2023</span>
+                  <a
+                    href="/image/ai certificate.PNG"
+                    target="_blank"
+                    class="text-primary hover:text-secondary transition-colors flex items-center gap-2 group"
+                  >
+                    View Certificate
+                    <i
+                      class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HPLife AI Basic Certificate -->
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="relative">
+                <a
+                  href="/image/Ai certfififi.PNG"
+                  target="_blank"
+                  class="block"
+                >
+                  <img
+                    src="/image/Ai certfififi.PNG"
+                    alt="HPLife AI Certificate"
+                    class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  ></div>
+                </a>
+              </div>
+              <div class="p-6 md:p-8">
+                <div class="flex items-center gap-4 mb-6">
+                  <div
+                    class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+                  >
+                    <i class="fas fa-robot"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-xl font-semibold text-primary">AI Basic</h3>
+                    <p class="text-gray-600">HPLife</p>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Fundamentals of Artificial Intelligence
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Introduction to Machine Learning
+                    </p>
+                  </div>
+                  <div class="flex items-center gap-3">
+                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                    <p class="text-gray-600">
+                      Basic AI concepts and applications
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-6 flex items-center justify-between">
+                  <span class="text-sm text-gray-500">Issued: 2023</span>
+                  <a
+                    href="/image/Ai certfififi.PNG"
+                    target="_blank"
+                    class="text-primary hover:text-secondary transition-colors flex items-center gap-2 group"
+                  >
+                    View Certificate
+                    <i
+                      class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Certificate Modal Functions
+      function openCertificateModal(imageSrc) {
+        const modal = document.getElementById("certificateModal");
+        const modalImage = document.getElementById("modalCertificateImage");
+        modalImage.src = imageSrc;
+        modal.classList.remove("hidden");
+        document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+      }
+
+      function closeCertificateModal() {
+        const modal = document.getElementById("certificateModal");
+        modal.classList.add("hidden");
+        document.body.style.overflow = ""; // Restore scrolling
+      }
+
+      // Close modal when clicking outside the image
+      document
+        .getElementById("certificateModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) {
+            closeCertificateModal();
+          }
+        });
+
+      // Close modal with Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          closeCertificateModal();
+        }
+      });
+    </script>
+
+    <!-- Resumes Section -->
+    <section
+      id="resumes"
+      class="py-12 md:py-20 bg-light relative overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-1/4 right-20 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-20 w-64 md:w-96 h-64 md:h-96 bg-secondary/5 rounded-full blur-3xl animate-float animation-delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full blur-3xl animate-float animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+          <span class="text-primary font-medium mb-2 block">My Documents</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Resume</h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <div
+            class="bg-white rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="relative overflow-hidden">
+              <div
+                class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              ></div>
+              <div class="p-8 md:p-10">
+                <div class="flex items-center gap-6 mb-8">
+                  <div
+                    class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl group-hover:rotate-12 transition-transform duration-300"
+                  >
+                    <i class="fas fa-file-pdf"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-2xl font-semibold text-primary">
+                      My Resume
+                    </h3>
+                    <p class="text-gray-600">Updated: January 2024</p>
+                  </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-2 h-2 bg-primary rounded-full"></div>
+                      <p class="text-gray-600">Professional Experience</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-2 h-2 bg-primary rounded-full"></div>
+                      <p class="text-gray-600">Technical Skills</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-2 h-2 bg-primary rounded-full"></div>
+                      <p class="text-gray-600">Education & Certifications</p>
+                    </div>
+                  </div>
+                  <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-2 h-2 bg-primary rounded-full"></div>
+                      <p class="text-gray-600">Projects & Achievements</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-2 h-2 bg-primary rounded-full"></div>
+                      <p class="text-gray-600">AI/ML Expertise</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                      <div class="w-2 h-2 bg-primary rounded-full"></div>
+                      <p class="text-gray-600">Web Development Skills</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="flex justify-center">
+                  <a
+                    href="path/to/your-resume.pdf"
+                    download="Izhan-Sajid-Resume.pdf"
+                    class="w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-all duration-300 hover:scale-105 group"
+                  >
+                    <i class="fas fa-download"></i>
+                    Download Resume
+                    <i
+                      class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"
+                    ></i>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 w-full h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-12 md:py-20 bg-light relative overflow-hidden"
+    >
+      <!-- Background Elements -->
+      <div class="absolute inset-0 z-0">
+        <div
+          class="absolute top-1/4 right-20 w-64 md:w-96 h-64 md:h-96 bg-primary/5 rounded-full blur-3xl animate-float"
+        ></div>
+        <div
+          class="absolute bottom-1/4 left-20 w-64 md:w-96 h-64 md:h-96 bg-secondary/5 rounded-full blur-3xl animate-float animation-delay-1000"
+        ></div>
+        <div
+          class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 md:w-96 h-64 md:h-96 bg-accent/5 rounded-full blur-3xl animate-float animation-delay-2000"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-8 md:mb-16" data-aos="fade-up">
+          <span class="text-primary font-medium mb-2 block">Get In Touch</span>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Me</h2>
+          <div class="w-24 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <!-- Contact Information -->
+          <div class="space-y-8">
+            <div
+              class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-right"
+              data-aos-delay="200"
+            >
+              <div class="flex items-center gap-4 mb-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+                >
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-primary">Email</h3>
+                  <p class="text-gray-600">izhansajid@gmail.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-right"
+              data-aos-delay="400"
+            >
+              <div class="flex items-center gap-4 mb-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+                >
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-primary">Phone</h3>
+                  <p class="text-gray-600">+92 3177990549</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="bg-white p-6 md:p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group"
+              data-aos="fade-right"
+              data-aos-delay="600"
+            >
+              <div class="flex items-center gap-4 mb-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl group-hover:rotate-12 transition-transform duration-300"
+                >
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold text-primary">Location</h3>
+                  <p class="text-gray-600">Kohat, Pakistan</p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="flex justify-center gap-6"
+              data-aos="fade-right"
+              data-aos-delay="800"
+            >
+              <a
+                href="#"
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110 group"
+              >
+                <i
+                  class="fab fa-github group-hover:rotate-12 transition-transform"
+                ></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110 group"
+              >
+                <i
+                  class="fab fa-linkedin group-hover:rotate-12 transition-transform"
+                ></i>
+              </a>
+              <a
+                href="#"
+                class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary text-xl hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110 group"
+              >
+                <i
+                  class="fab fa-twitter group-hover:rotate-12 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div
+            class="bg-white p-6 md:p-8 rounded-xl shadow-lg"
+            data-aos="fade-left"
+            data-aos-delay="400"
+          >
+            <form class="space-y-6">
+              <div class="relative group">
+                <input
+                  type="text"
+                  class="w-full p-4 pl-12 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 group-hover:border-primary"
+                  placeholder="Your Name"
+                  required
+                />
+                <div
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors"
+                >
+                  <i class="fas fa-user"></i>
+                </div>
+              </div>
+
+              <div class="relative group">
+                <input
+                  type="email"
+                  class="w-full p-4 pl-12 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 group-hover:border-primary"
+                  placeholder="Your Email"
+                  required
+                />
+                <div
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors"
+                >
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+
+              <div class="relative group">
+                <input
+                  type="text"
+                  class="w-full p-4 pl-12 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 group-hover:border-primary"
+                  placeholder="Subject"
+                  required
+                />
+                <div
+                  class="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 group-hover:text-primary transition-colors"
+                >
+                  <i class="fas fa-tag"></i>
+                </div>
+              </div>
+
+              <div class="relative group">
+                <textarea
+                  class="w-full p-4 pl-12 border border-gray-200 rounded-lg h-40 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 group-hover:border-primary resize-none"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+                <div
+                  class="absolute left-4 top-4 text-gray-400 group-hover:text-primary transition-colors"
+                >
+                  <i class="fas fa-comment"></i>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full py-3 bg-primary text-white rounded-lg hover:bg-secondary transition-all duration-300 hover:scale-105 hover:shadow-lg group"
+              >
+                <span class="flex items-center justify-center gap-2">
+                  <i
+                    class="fas fa-paper-plane transform group-hover:translate-x-1 transition-transform"
+                  ></i>
+                  Send Message
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-8">
+      <p>&copy; 2024 Izhan Sajid. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      // Mobile Menu Functions
+      function toggleMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+
+        mobileMenu.classList.toggle("translate-x-full");
+        hamburger.classList.toggle("active");
+
+        // Toggle hamburger animation
+        const lines = hamburger.querySelectorAll("div");
+        if (hamburger.classList.contains("active")) {
+          lines[0].style.transform = "rotate(45deg) translate(5px, 5px)";
+          lines[1].style.opacity = "0";
+          lines[2].style.transform = "rotate(-45deg) translate(5px, -5px)";
+        } else {
+          lines[0].style.transform = "none";
+          lines[1].style.opacity = "1";
+          lines[2].style.transform = "none";
+        }
+      }
+
+      function closeMenu() {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+
+        mobileMenu.classList.add("translate-x-full");
+        hamburger.classList.remove("active");
+
+        // Reset hamburger animation
+        const lines = hamburger.querySelectorAll("div");
+        lines[0].style.transform = "none";
+        lines[1].style.opacity = "1";
+        lines[2].style.transform = "none";
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const hamburger = document.querySelector(".hamburger");
+
+        if (
+          !mobileMenu.contains(event.target) &&
+          !hamburger.contains(event.target)
+        ) {
+          closeMenu();
+        }
+      });
+
+      // Initialize AOS with custom settings
+      AOS.init({
+        duration: 800,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false,
+        offset: 100,
+        delay: 100,
+      });
+
+      // Scroll Progress Bar
+      const progressBar = document.getElementById("progressBar");
+
+      window.addEventListener("scroll", () => {
+        const windowHeight =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        const scrolled = (window.scrollY / windowHeight) * 100;
+        progressBar.style.width = `${scrolled}%`;
+      });
+    </script>
+
+    <!-- Floating Navigation -->
+    <div
+      class="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 hidden md:block"
+    >
+      <div class="flex flex-col gap-4">
+        <a href="#home" class="nav-link group" data-tooltip="Home">
+          <div
+            class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-all duration-300 hover:scale-110 shadow-lg"
+          >
+            <i class="fas fa-home text-xl"></i>
+          </div>
+          <span
+            class="absolute right-14 bg-white text-dark px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+            >Home</span
+          >
+        </a>
+        <a href="#about" class="nav-link group" data-tooltip="About">
+          <div
+            class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-all duration-300 hover:scale-110 shadow-lg"
+          >
+            <i class="fas fa-user text-xl"></i>
+          </div>
+          <span
+            class="absolute right-14 bg-white text-dark px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+            >About</span
+          >
+        </a>
+        <a href="#projects" class="nav-link group" data-tooltip="Projects">
+          <div
+            class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-all duration-300 hover:scale-110 shadow-lg"
+          >
+            <i class="fas fa-code text-xl"></i>
+          </div>
+          <span
+            class="absolute right-14 bg-white text-dark px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+            >Projects</span
+          >
+        </a>
+        <a
+          href="#certificates"
+          class="nav-link group"
+          data-tooltip="Certificates"
+        >
+          <div
+            class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-all duration-300 hover:scale-110 shadow-lg"
+          >
+            <i class="fas fa-certificate text-xl"></i>
+          </div>
+          <span
+            class="absolute right-14 bg-white text-dark px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+            >Certificates</span
+          >
+        </a>
+        <a href="#contact" class="nav-link group" data-tooltip="Contact">
+          <div
+            class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white hover:bg-secondary transition-all duration-300 hover:scale-110 shadow-lg"
+          >
+            <i class="fas fa-envelope text-xl"></i>
+          </div>
+          <span
+            class="absolute right-14 bg-white text-dark px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap"
+            >Contact</span
+          >
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile Bottom Navigation -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md z-50 md:hidden border-t border-gray-200"
+    >
+      <div class="flex justify-around items-center py-3">
+        <a
+          href="#home"
+          class="flex flex-col items-center text-primary hover:text-secondary transition-colors"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mb-1"
+          >
+            <i class="fas fa-home text-lg"></i>
+          </div>
+          <span class="text-xs">Home</span>
+        </a>
+        <a
+          href="#about"
+          class="flex flex-col items-center text-primary hover:text-secondary transition-colors"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mb-1"
+          >
+            <i class="fas fa-user text-lg"></i>
+          </div>
+          <span class="text-xs">About</span>
+        </a>
+        <a
+          href="#projects"
+          class="flex flex-col items-center text-primary hover:text-secondary transition-colors"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mb-1"
+          >
+            <i class="fas fa-code text-lg"></i>
+          </div>
+          <span class="text-xs">Projects</span>
+        </a>
+        <a
+          href="#certificates"
+          class="flex flex-col items-center text-primary hover:text-secondary transition-colors"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mb-1"
+          >
+            <i class="fas fa-certificate text-lg"></i>
+          </div>
+          <span class="text-xs">Certificates</span>
+        </a>
+        <a
+          href="#contact"
+          class="flex flex-col items-center text-primary hover:text-secondary transition-colors"
+        >
+          <div
+            class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white mb-1"
+          >
+            <i class="fas fa-envelope text-lg"></i>
+          </div>
+          <span class="text-xs">Contact</span>
+        </a>
+      </div>
+    </div>
+
+    <style>
+      /* Navigation Styles */
+      .nav-link {
+        position: relative;
+        display: flex;
+        align-items: center;
+      }
+
+      /* Active Navigation Link */
+      .nav-link.active div {
+        background-color: #1e40af;
+        transform: scale(1.1);
+      }
+
+      /* Mobile Navigation Active State */
+      @media (max-width: 768px) {
+        .mobile-nav-link.active div {
+          background-color: #1e40af;
+        }
+      }
+    </style>
+
+    <script>
+      // Add this to your existing script section
+      document.addEventListener("DOMContentLoaded", function () {
+        // Function to update active navigation link
+        function updateActiveNavLink() {
+          const sections = document.querySelectorAll("section[id]");
+          const scrollPosition = window.scrollY;
+
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute("id");
+
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionTop + sectionHeight
+            ) {
+              // Update desktop navigation
+              document.querySelectorAll(".nav-link").forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                  link.classList.add("active");
+                }
+              });
+
+              // Update mobile navigation
+              document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                  link.classList.add("active");
+                }
+              });
+            }
+          });
+        }
+
+        // Update active link on scroll
+        window.addEventListener("scroll", updateActiveNavLink);
+
+        // Initial update
+        updateActiveNavLink();
+      });
+    </script>
+  </body>
+</html>
